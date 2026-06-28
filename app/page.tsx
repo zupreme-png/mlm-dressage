@@ -1,174 +1,171 @@
-const services = [
+import { LinkButton } from "./components/Button";
+import { Section, SectionHeading } from "./components/Section";
+import { ServiceCard } from "./components/ServiceCard";
+import { Testimonial, Stars } from "./components/Testimonial";
+import { FaqList } from "./components/Faq";
+import { CtaBand } from "./components/CtaBand";
+import { services, testimonials, faqs } from "./data/content";
+import { site, offer } from "./data/site";
+
+const steps = [
   {
-    title: "Horse Training",
-    description:
-      "Classical, progressive training from backing young horses through the FEI levels — always at the pace the horse is ready for.",
+    n: "1",
+    title: "Book your free session",
+    body: "Tell us about you and your horse. Pick a time that works — it takes two minutes.",
   },
   {
-    title: "Rider Coaching",
-    description:
-      "Private and clinic lessons for riders at every level, building correct position, feel, and a true partnership in the saddle.",
+    n: "2",
+    title: "Ride & get your plan",
+    body: "We assess, fix one thing you'll feel that day, and hand you a written next-step plan.",
   },
   {
-    title: "Sport Horse Sales",
-    description:
-      "A small, carefully selected string of sound, well-started dressage prospects and competition horses for sale.",
+    n: "3",
+    title: "Progress with confidence",
+    body: "Continue with the program that fits your goals — or don't. Zero pressure, ever.",
   },
 ];
 
 export default function Home() {
   return (
-    <div className="flex flex-1 flex-col bg-cream text-foreground font-sans">
-      {/* Header */}
-      <header className="absolute top-0 z-10 w-full">
-        <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-6">
-          <span className="font-serif text-2xl font-semibold tracking-wide text-cream">
-            Willowmere Dressage
-          </span>
-          <div className="hidden gap-8 text-sm font-medium text-cream/90 sm:flex">
-            <a href="#services" className="transition-colors hover:text-gold">
-              Services
-            </a>
-            <a href="#about" className="transition-colors hover:text-gold">
-              About
-            </a>
-            <a href="#contact" className="transition-colors hover:text-gold">
-              Contact
-            </a>
-          </div>
-        </nav>
-      </header>
-
+    <>
       {/* Hero */}
-      <section className="relative flex min-h-[34rem] items-center justify-center overflow-hidden bg-forest px-6 py-32 text-center">
+      <section className="relative overflow-hidden bg-forest">
         <div
           aria-hidden
           className="pointer-events-none absolute inset-0 opacity-40"
           style={{
             backgroundImage:
-              "radial-gradient(circle at 30% 20%, rgba(176,137,72,0.35), transparent 55%), radial-gradient(circle at 80% 80%, rgba(90,107,84,0.5), transparent 50%)",
+              "radial-gradient(circle at 25% 15%, rgba(176,137,72,0.35), transparent 55%), radial-gradient(circle at 85% 80%, rgba(90,107,84,0.55), transparent 50%)",
           }}
         />
-        <div className="relative max-w-2xl">
+        <div className="relative mx-auto max-w-4xl px-6 py-28 text-center sm:py-32">
           <p className="mb-4 text-sm font-medium uppercase tracking-[0.3em] text-gold">
-            Classical Dressage
+            Classical Dressage in {site.address.city}
           </p>
           <h1 className="font-serif text-5xl font-semibold leading-tight text-cream sm:text-6xl">
-            Where horse and rider find harmony.
+            Finally feel the connection you&rsquo;ve been riding for.
           </h1>
-          <p className="mx-auto mt-6 max-w-xl text-lg leading-8 text-cream/80">
-            Thoughtful training, coaching, and sales rooted in patience,
-            classical principles, and putting the horse first.
+          <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-cream/80">
+            Patient, classical training and coaching for adult amateurs and competitive
+            riders. Start with a free 45-minute breakthrough session — and feel the
+            difference before you commit to anything.
           </p>
-          <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <a
-              href="#contact"
-              className="flex h-12 items-center justify-center rounded-full bg-gold px-8 text-sm font-semibold text-forest transition-colors hover:bg-cream"
-            >
-              Book a Lesson
-            </a>
-            <a
-              href="#services"
-              className="flex h-12 items-center justify-center rounded-full border border-cream/40 px-8 text-sm font-semibold text-cream transition-colors hover:border-cream"
-            >
-              Explore Services
-            </a>
+          <div className="mt-9 flex flex-col items-center justify-center gap-4 sm:flex-row">
+            <LinkButton href="/book">{offer.cta}</LinkButton>
+            <LinkButton href="/training" variant="secondary">
+              See Training Programs
+            </LinkButton>
+          </div>
+          <div className="mt-8 flex items-center justify-center gap-3 text-sm text-cream/80">
+            <Stars count={site.rating.stars} />
+            <span>
+              Rated {site.rating.stars}.0 by {site.rating.count} local riders
+            </span>
           </div>
         </div>
       </section>
 
-      {/* Services */}
-      <section id="services" className="mx-auto w-full max-w-6xl px-6 py-24">
-        <div className="mb-14 text-center">
+      {/* Differentiator */}
+      <Section className="bg-cream">
+        <div className="mx-auto max-w-3xl text-center">
           <p className="mb-3 text-sm font-medium uppercase tracking-[0.3em] text-gold">
-            What We Offer
+            Why riders choose us
           </p>
-          <h2 className="font-serif text-4xl font-semibold text-forest">
-            Services
-          </h2>
+          <p className="font-serif text-3xl leading-relaxed text-forest sm:text-4xl">
+            Unlike trainers who rush through cookie-cutter lessons, you get a customized
+            plan, honest feedback, and unlimited text support between rides — so you keep
+            improving even when you&rsquo;re not in the saddle.
+          </p>
         </div>
-        <div className="grid gap-8 sm:grid-cols-3">
+      </Section>
+
+      {/* Services teasers */}
+      <Section className="bg-sand/40" id="services">
+        <SectionHeading
+          eyebrow="What we offer"
+          title="Training built around your goals"
+          intro="Every path starts the same way — with a free session — then continues with the program that fits where you want to go."
+        />
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
           {services.map((service) => (
-            <article
-              key={service.title}
-              className="rounded-2xl border border-sand bg-white/60 p-8 transition-shadow hover:shadow-lg"
-            >
-              <h3 className="font-serif text-2xl font-semibold text-bark">
-                {service.title}
-              </h3>
-              <p className="mt-4 leading-7 text-bark/80">
-                {service.description}
-              </p>
-            </article>
+            <ServiceCard key={service.slug} service={service} />
           ))}
         </div>
-      </section>
-
-      {/* About */}
-      <section id="about" className="bg-sand/50">
-        <div className="mx-auto grid max-w-6xl items-center gap-12 px-6 py-24 sm:grid-cols-2">
-          <div>
-            <p className="mb-3 text-sm font-medium uppercase tracking-[0.3em] text-gold">
-              Our Yard
-            </p>
-            <h2 className="font-serif text-4xl font-semibold text-forest">
-              A calm, horse-first home for dressage
-            </h2>
-            <p className="mt-6 leading-8 text-bark/80">
-              Set on quiet pasture with all-weather arenas and unhurried
-              turnout, Willowmere is built around the wellbeing of every horse
-              in our care. We believe great dressage grows from trust,
-              correct basics, and time — never shortcuts.
-            </p>
-            <p className="mt-4 leading-8 text-bark/80">
-              Whether you are starting your first horse or chasing your next
-              competition goal, you will find a supportive, attentive home for
-              your partnership here.
-            </p>
-          </div>
-          <div className="flex aspect-[4/3] items-center justify-center rounded-2xl bg-forest/90 p-10 text-center">
-            <p className="font-serif text-3xl font-medium leading-relaxed text-cream/90">
-              &ldquo;Patience and clarity, ride after ride.&rdquo;
-            </p>
-          </div>
+        <div className="mt-10 text-center">
+          <LinkButton href="/training" variant="ghost">
+            Explore all programs
+          </LinkButton>
         </div>
-      </section>
+      </Section>
 
-      {/* Contact / CTA */}
-      <section id="contact" className="bg-forest px-6 py-24 text-center">
-        <div className="mx-auto max-w-xl">
+      {/* How it works */}
+      <Section className="bg-cream">
+        <SectionHeading
+          eyebrow="How it works"
+          title="Three simple steps to better riding"
+        />
+        <div className="grid gap-8 sm:grid-cols-3">
+          {steps.map((step) => (
+            <div key={step.n} className="text-center">
+              <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-forest font-serif text-2xl font-semibold text-cream">
+                {step.n}
+              </div>
+              <h3 className="mt-5 font-serif text-2xl font-semibold text-forest">
+                {step.title}
+              </h3>
+              <p className="mt-3 leading-7 text-bark/80">{step.body}</p>
+            </div>
+          ))}
+        </div>
+      </Section>
+
+      {/* Social proof */}
+      <Section className="bg-sand/40">
+        <SectionHeading
+          eyebrow="Real riders, real results"
+          title="Don't take our word for it"
+        />
+        <div className="grid gap-8 md:grid-cols-3">
+          {testimonials.map((t) => (
+            <Testimonial key={t.name} {...t} />
+          ))}
+        </div>
+        <div className="mt-10 text-center">
+          <LinkButton href="/results" variant="ghost">
+            See more results
+          </LinkButton>
+        </div>
+      </Section>
+
+      {/* Offer block */}
+      <Section className="bg-cream">
+        <div className="mx-auto max-w-3xl rounded-3xl border border-sand bg-white/70 p-10 text-center">
           <p className="mb-3 text-sm font-medium uppercase tracking-[0.3em] text-gold">
-            Get In Touch
+            Your no-risk first step
           </p>
-          <h2 className="font-serif text-4xl font-semibold text-cream">
-            Visit Willowmere
-          </h2>
-          <p className="mt-6 leading-8 text-cream/80">
-            Lessons, training enquiries, and sales viewings are by appointment.
-            We would love to hear from you.
-          </p>
-          <div className="mt-8 space-y-2 text-cream/90">
-            <p>
-              <a
-                href="mailto:hello@willowmeredressage.com"
-                className="font-medium underline-offset-4 transition-colors hover:text-gold hover:underline"
-              >
-                hello@willowmeredressage.com
-              </a>
-            </p>
-            <p>(555) 014-2987</p>
-            <p className="text-cream/70">Willowmere Farm · Greenvale</p>
+          <h2 className="font-serif text-4xl font-semibold text-forest">{offer.name}</h2>
+          <ul className="mx-auto mt-7 max-w-md space-y-3 text-left">
+            {offer.includes.map((item) => (
+              <li key={item} className="flex gap-3 text-bark/85">
+                <span className="text-gold">✓</span>
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+          <p className="mt-6 text-sm text-bark/70">{offer.risk}</p>
+          <div className="mt-8">
+            <LinkButton href="/book">{offer.cta}</LinkButton>
           </div>
         </div>
-      </section>
+      </Section>
 
-      {/* Footer */}
-      <footer className="bg-bark px-6 py-8 text-center text-sm text-cream/70">
-        <p>
-          © {new Date().getFullYear()} Willowmere Dressage. All rights
-          reserved.
-        </p>
-      </footer>
-    </div>
+      {/* FAQ */}
+      <Section className="bg-sand/40">
+        <SectionHeading eyebrow="Good to know" title="Questions, answered" />
+        <FaqList items={faqs} />
+      </Section>
+
+      <CtaBand />
+    </>
   );
 }
