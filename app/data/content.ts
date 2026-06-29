@@ -50,7 +50,7 @@ export const services: Service[] = [
       "Show-ready presentation",
       "Attentive, consistent care",
     ],
-    priceFrom: "$500",
+    priceFrom: "$650",
     showFreeCta: false,
   },
 ];

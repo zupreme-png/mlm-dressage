@@ -32,7 +32,7 @@ export const site = {
 export const offer = {
   name: "Free 45-Minute Session",
   short: "Free Session · Limited Time",
-  cta: "Book Your Free Session",
+  cta: "Schedule Trial Lesson",
   scarcity: "Free sessions are available for a limited time each month",
   includes: [
     "A ridden assessment of you and your horse",

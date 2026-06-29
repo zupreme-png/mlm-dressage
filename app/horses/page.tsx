@@ -67,13 +67,13 @@ export default function HorsesPage() {
             </div>
           ))}
         </div>
-        <div className="relative mx-auto mt-12 aspect-[16/9] max-w-4xl overflow-hidden rounded-2xl shadow-sm">
+        <div className="relative mx-auto mt-12 aspect-[2/3] max-w-sm overflow-hidden rounded-2xl shadow-sm">
           <Image
             src="/photos/photo6.jpg"
-            alt="Dressage horse and rider competing"
+            alt="McKenzie Milburn and her dressage horse competing"
             fill
-            sizes="(max-width: 1024px) 100vw, 60vw"
-            className="object-cover object-top"
+            sizes="(max-width: 640px) 100vw, 384px"
+            className="object-cover object-center"
           />
         </div>
       </Section>
