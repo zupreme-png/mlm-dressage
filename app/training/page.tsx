@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Section, SectionHeading } from "../components/Section";
 import { ServiceCard } from "../components/ServiceCard";
-import { FaqList } from "../components/Faq";
 import { CtaBand } from "../components/CtaBand";
-import { services, faqs } from "../data/content";
+import { services } from "../data/content";
 
 export const metadata: Metadata = {
   title: "Training & Coaching",
   description:
-    "Private lessons, full and part training, young horse starting, and competition prep. Classical, horse-first dressage in Greenvale.",
+    "Private lessons, full training, and full grooming with McKenzie Milburn. Dressage for horses and riders of every level in Encinitas, California.",
 };
 
 export default function TrainingPage() {
@@ -22,10 +22,10 @@ export default function TrainingPage() {
           <h1 className="font-serif text-5xl font-semibold text-cream">
             A program for every stage of the journey
           </h1>
-          <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-cream/80">
+          <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-cream/85">
             Whether you&rsquo;re starting a young horse or chasing your next score, the
-            foundation is the same: correct, classical basics built on trust. Every program
-            begins with a free session so we can find the right fit together.
+            foundation is the same: correct, confident riding built on trust — for horses and
+            riders of all levels, from young horses to Grand Prix.
           </p>
         </div>
       </section>
@@ -34,21 +34,39 @@ export default function TrainingPage() {
         <SectionHeading
           eyebrow="Choose your path"
           title="Ways to train with us"
-          intro="Pricing shown is a starting guide — your free session includes a tailored recommendation."
         />
-        <div className="grid gap-8 md:grid-cols-2">
+        <div className="grid gap-8 md:grid-cols-3">
           {services.map((service) => (
             <ServiceCard key={service.slug} service={service} />
           ))}
         </div>
       </Section>
 
-      <Section className="bg-sand/40">
-        <SectionHeading eyebrow="Common questions" title="Is this right for me?" />
-        <FaqList items={faqs} />
-      </Section>
+      {/* Photo banner */}
+      <section className="relative isolate overflow-hidden">
+        <Image
+          src="/photos/photo8.jpg"
+          alt="McKenzie Milburn riding at a HITS dressage competition"
+          fill
+          sizes="100vw"
+          className="-z-10 object-cover object-center"
+        />
+        <div className="-z-10 absolute inset-0 bg-forest/75" />
+        <div className="mx-auto max-w-3xl px-6 py-20 text-center">
+          <h2 className="font-serif text-4xl font-semibold text-cream">
+            Developed with patience and care
+          </h2>
+          <p className="mx-auto mt-4 max-w-xl text-lg leading-8 text-cream/85">
+            Every horse and rider progresses at their own pace — with a plan tailored to
+            where you are and where you want to go.
+          </p>
+        </div>
+      </section>
 
-      <CtaBand heading="Not sure which program fits?" sub="Start with a free session — we'll point you in the right direction, no obligation." />
+      <CtaBand
+        heading="Not sure which program fits?"
+        sub="Start with a free session — we'll point you in the right direction, no obligation."
+      />
     </>
   );
 }

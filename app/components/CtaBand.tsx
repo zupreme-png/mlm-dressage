@@ -8,7 +8,7 @@ type Props = {
 
 export function CtaBand({
   heading = "Ready to feel the difference?",
-  sub = offer.scarcity + ". Book yours before they're gone.",
+  sub = offer.scarcity + " — book yours while they last.",
 }: Props) {
   return (
     <section className="bg-forest">

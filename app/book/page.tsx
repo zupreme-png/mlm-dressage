@@ -1,14 +1,11 @@
 import type { Metadata } from "next";
 import { BookingForm } from "../components/BookingForm";
-import { FaqList } from "../components/Faq";
-import { Stars } from "../components/Testimonial";
 import { offer, site } from "../data/site";
-import { faqs } from "../data/content";
 
 export const metadata: Metadata = {
   title: "Book Your Free Session",
   description:
-    "Claim your free 45-minute dressage breakthrough session in Greenvale. Ridden assessment, one focus fix, and a written plan — no obligation.",
+    "Claim your free 45-minute dressage session with McKenzie Milburn in Encinitas, California. Ridden assessment and honest feedback — no obligation.",
 };
 
 export default function BookPage() {
@@ -20,7 +17,7 @@ export default function BookPage() {
             {offer.short}
           </p>
           <h1 className="font-serif text-5xl font-semibold text-cream">{offer.name}</h1>
-          <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-cream/80">
+          <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-cream/85">
             {offer.scarcity}. {offer.risk}
           </p>
         </div>
@@ -47,17 +44,6 @@ export default function BookPage() {
             </h3>
             <p className="mt-3 leading-8 text-bark/80">{offer.forWho}</p>
 
-            <div className="mt-10 rounded-2xl border border-sand bg-white/70 p-6">
-              <Stars count={site.rating.stars} />
-              <p className="mt-3 leading-7 text-bark/85">
-                &ldquo;The free session sold me — no pressure, just real coaching from
-                minute one. I booked my package the same week.&rdquo;
-              </p>
-              <p className="mt-3 text-sm font-semibold text-forest">
-                Priya K. · Returning rider
-              </p>
-            </div>
-
             <p className="mt-8 text-bark/70">
               Prefer to talk first? Call{" "}
               <a href={site.phoneHref} className="font-semibold text-forest hover:text-gold">
@@ -73,15 +59,6 @@ export default function BookPage() {
           </div>
         </div>
       </div>
-
-      <section className="bg-sand/40">
-        <div className="mx-auto max-w-6xl px-6 py-20">
-          <h2 className="mb-10 text-center font-serif text-3xl font-semibold text-forest">
-            Before you book
-          </h2>
-          <FaqList items={faqs} />
-        </div>
-      </section>
     </>
   );
 }

@@ -39,6 +39,9 @@ yarn-error.log*
 # claude code local settings
 .claude/settings.local.json
 
+# original photo uploads (served copies live in public/photos)
+/Photos/
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts

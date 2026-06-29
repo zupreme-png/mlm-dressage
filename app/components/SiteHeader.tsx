@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 import { nav, site, offer } from "../data/site";
 import { LinkButton } from "./Button";
@@ -10,9 +11,19 @@ export function SiteHeader() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-bark/10 bg-cream/90 backdrop-blur">
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-        <Link href="/" className="font-serif text-2xl font-semibold tracking-wide text-forest">
-          MLM Dressage
+      <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-3">
+        <Link href="/" className="flex items-center gap-3" aria-label="MLM Dressage home">
+          <Image
+            src={site.logo}
+            alt="MLM Dressage"
+            width={56}
+            height={56}
+            priority
+            className="h-12 w-12 object-contain"
+          />
+          <span className="font-serif text-xl font-semibold tracking-wide text-forest">
+            MLM Dressage
+          </span>
         </Link>
 
         <nav className="hidden items-center gap-7 text-sm font-medium text-bark lg:flex">

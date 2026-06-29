@@ -5,7 +5,7 @@ import { site } from "../data/site";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Get in touch with MLM Dressage in Greenvale. Lessons, training enquiries, and sales viewings by appointment.",
+    "Get in touch with McKenzie Milburn at MLM Dressage, based at Wildflower Equestrian Center in Encinitas, California.",
 };
 
 export default function ContactPage() {
@@ -16,9 +16,9 @@ export default function ContactPage() {
           <p className="mb-3 text-sm font-medium uppercase tracking-[0.3em] text-gold">
             Get in touch
           </p>
-          <h1 className="font-serif text-5xl font-semibold text-cream">Visit MLM Dressage</h1>
-          <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-cream/80">
-            Lessons, training enquiries, and sales viewings are by appointment. The fastest
+          <h1 className="font-serif text-5xl font-semibold text-cream">Contact MLM Dressage</h1>
+          <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-cream/85">
+            Lessons, training enquiries, and sales questions are always welcome. The fastest
             way to get started is to book your free session below.
           </p>
         </div>
@@ -40,7 +40,7 @@ export default function ContactPage() {
               <div>
                 <dt className="text-sm font-semibold uppercase tracking-wider text-gold">Email</dt>
                 <dd className="mt-1">
-                  <a href={site.emailHref} className="text-lg font-medium text-forest hover:text-gold">
+                  <a href={site.emailHref} className="text-lg font-medium break-all text-forest hover:text-gold">
                     {site.email}
                   </a>
                 </dd>
@@ -48,22 +48,41 @@ export default function ContactPage() {
               <div>
                 <dt className="text-sm font-semibold uppercase tracking-wider text-gold">Location</dt>
                 <dd className="mt-1 leading-7">
-                  {site.address.line1}
+                  <a
+                    href={site.venue.website}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-medium text-forest hover:text-gold"
+                  >
+                    {site.venue.name}
+                  </a>
                   <br />
-                  {site.address.line2}
+                  {site.venue.line1}
                   <br />
-                  {site.address.city}, {site.address.region} {site.address.postal}
+                  {site.venue.city}, {site.venue.region} {site.venue.postal}
+                  <br />
+                  <a
+                    href={site.venue.facilities}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-2 inline-block text-sm font-semibold text-gold underline-offset-4 hover:underline"
+                  >
+                    View Wildflower facilities →
+                  </a>
                 </dd>
               </div>
               <div>
-                <dt className="text-sm font-semibold uppercase tracking-wider text-gold">Hours</dt>
-                <dd className="mt-1">{site.hours}</dd>
+                <dt className="text-sm font-semibold uppercase tracking-wider text-gold">Follow along</dt>
+                <dd className="mt-1 flex flex-col gap-1">
+                  <a href={site.social.instagram} target="_blank" rel="noopener noreferrer" className="font-medium text-forest hover:text-gold">
+                    Instagram · @{site.social.instagramHandle}
+                  </a>
+                  <a href={site.social.facebook} target="_blank" rel="noopener noreferrer" className="font-medium text-forest hover:text-gold">
+                    Facebook · {site.social.facebookHandle}
+                  </a>
+                </dd>
               </div>
             </dl>
-
-            <div className="mt-8 flex aspect-[16/9] items-center justify-center rounded-2xl border border-sand bg-sand/50 text-bark/50">
-              [ Map embed placeholder ]
-            </div>
           </div>
 
           <div className="lg:pl-4">

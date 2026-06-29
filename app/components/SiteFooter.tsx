@@ -1,13 +1,25 @@
 import Link from "next/link";
+import Image from "next/image";
 import { nav, site } from "../data/site";
 
 export function SiteFooter() {
   return (
-    <footer className="bg-bark text-cream/80">
+    <footer className="bg-forest text-cream/80">
       <div className="mx-auto grid max-w-6xl gap-10 px-6 py-14 sm:grid-cols-2 lg:grid-cols-4">
         <div className="sm:col-span-2 lg:col-span-1">
-          <p className="font-serif text-2xl font-semibold text-cream">MLM Dressage</p>
-          <p className="mt-3 max-w-xs text-sm leading-6">{site.tagline}.</p>
+          <div className="flex items-center gap-3">
+            <span className="flex h-14 w-14 items-center justify-center rounded-full bg-white">
+              <Image
+                src={site.logo}
+                alt="MLM Dressage"
+                width={48}
+                height={48}
+                className="h-11 w-11 object-contain"
+              />
+            </span>
+            <span className="font-serif text-2xl font-semibold text-cream">MLM Dressage</span>
+          </div>
+          <p className="mt-4 max-w-xs text-sm leading-6">{site.tagline}.</p>
         </div>
 
         <div>
@@ -26,12 +38,30 @@ export function SiteFooter() {
         <div>
           <p className="mb-4 text-sm font-semibold uppercase tracking-widest text-gold">Visit</p>
           <address className="space-y-1 text-sm not-italic leading-6">
-            <p>{site.address.line1}</p>
-            <p>{site.address.line2}</p>
             <p>
-              {site.address.city}, {site.address.region} {site.address.postal}
+              <a
+                href={site.venue.website}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-medium text-cream hover:text-gold"
+              >
+                {site.venue.name}
+              </a>
             </p>
-            <p className="pt-2">{site.hours}</p>
+            <p>{site.venue.line1}</p>
+            <p>
+              {site.venue.city}, {site.venue.region} {site.venue.postal}
+            </p>
+            <p className="pt-2">
+              <a
+                href={site.venue.facilities}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline-offset-4 hover:text-gold hover:underline"
+              >
+                View facilities →
+              </a>
+            </p>
           </address>
         </div>
 
@@ -44,15 +74,18 @@ export function SiteFooter() {
               </a>
             </li>
             <li>
-              <a href={site.emailHref} className="hover:text-cream">
+              <a href={site.emailHref} className="break-all hover:text-cream">
                 {site.email}
               </a>
             </li>
           </ul>
-          <div className="mt-4 flex gap-4 text-sm">
-            <a href={site.social.instagram} className="hover:text-cream">Instagram</a>
-            <a href={site.social.facebook} className="hover:text-cream">Facebook</a>
-            <a href={site.social.youtube} className="hover:text-cream">YouTube</a>
+          <div className="mt-4 flex flex-col gap-2 text-sm">
+            <a href={site.social.instagram} target="_blank" rel="noopener noreferrer" className="hover:text-cream">
+              Instagram · @{site.social.instagramHandle}
+            </a>
+            <a href={site.social.facebook} target="_blank" rel="noopener noreferrer" className="hover:text-cream">
+              Facebook · {site.social.facebookHandle}
+            </a>
           </div>
         </div>
       </div>

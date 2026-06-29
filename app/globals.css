@@ -1,21 +1,28 @@
 @import "tailwindcss";
 
 :root {
-  --background: #f7f4ee;
-  --foreground: #2c2a26;
+  --background: #ffffff;
+  --foreground: #141414;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
 
-  /* Brand palette */
-  --color-cream: #f7f4ee;
-  --color-sand: #e8e1d4;
-  --color-bark: #4a3f35;
-  --color-forest: #33433a;
-  --color-moss: #5a6b54;
-  --color-gold: #b08948;
+  /* Brand palette — blue & white, black writing, gold accents (matches logo).
+     Token names kept stable across the codebase; values map to the new theme:
+       cream  -> white / light text on navy
+       sand   -> soft blue tint (alt sections, borders)
+       bark   -> near-black body text
+       forest -> brand navy (dark sections, headings)
+       moss   -> blue accent (success states)
+       gold   -> logo gold (accents & lettering) */
+  --color-cream: #ffffff;
+  --color-sand: #e8eef6;
+  --color-bark: #141414;
+  --color-forest: #11365f;
+  --color-moss: #2f6f8f;
+  --color-gold: #b58b3e;
 
   --font-sans: var(--font-geist-sans);
   --font-serif: var(--font-cormorant);

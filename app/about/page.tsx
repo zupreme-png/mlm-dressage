@@ -1,18 +1,14 @@
 import type { Metadata } from "next";
-import { Section, SectionHeading } from "../components/Section";
+import Image from "next/image";
+import { Section } from "../components/Section";
 import { CtaBand } from "../components/CtaBand";
+import { site } from "../data/site";
 
 export const metadata: Metadata = {
-  title: "About",
+  title: "About McKenzie Milburn",
   description:
-    "Meet MLM Dressage — classical, horse-first training and coaching in Greenvale, built on patience, correct basics, and trust.",
+    "Meet McKenzie Milburn — USDF Bronze, Silver & Gold medalist, Grand Prix competitor, and trainer of horses and riders of all levels in Encinitas, California.",
 };
-
-const values = [
-  { title: "Horse first, always", body: "Every decision starts with the horse's wellbeing. Sound bodies and willing minds make great dressage." },
-  { title: "Classical foundations", body: "We don't chase shortcuts. Correct basics, ridden well, are what hold up under pressure." },
-  { title: "Riders who feel it", body: "Our job isn't to talk at you — it's to help you feel the right answer so you can find it again." },
-];
 
 export default function AboutPage() {
   return (
@@ -22,64 +18,106 @@ export default function AboutPage() {
           <p className="mb-3 text-sm font-medium uppercase tracking-[0.3em] text-gold">
             About MLM Dressage
           </p>
-          <h1 className="font-serif text-5xl font-semibold text-cream">
-            Calm, classical, horse-first
-          </h1>
-          <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-cream/80">
-            A quiet yard in Greenvale where great dressage grows from trust, correct basics,
-            and time — never shortcuts.
+          <h1 className="font-serif text-5xl font-semibold text-cream">McKenzie Milburn</h1>
+          <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-cream/85">
+            Bronze, Silver &amp; Gold medalist · Grand Prix competitor · Trainer of horses
+            and riders of all levels.
           </p>
         </div>
       </section>
 
+      {/* Intro with photo 3 */}
       <Section className="bg-cream">
         <div className="grid items-center gap-12 lg:grid-cols-2">
-          <div className="flex aspect-[4/3] items-center justify-center rounded-2xl bg-forest/90 p-10 text-center">
-            <p className="font-serif text-3xl font-medium leading-relaxed text-cream/90">
-              [ Photo of the trainer &amp; facility ]
-            </p>
+          <div className="relative aspect-[4/5] overflow-hidden rounded-2xl shadow-sm">
+            <Image
+              src="/photos/photo3.jpg"
+              alt="McKenzie Milburn with her dressage horse at a competition"
+              fill
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              className="object-cover"
+            />
           </div>
           <div>
-            <h2 className="font-serif text-3xl font-semibold text-forest">Our story</h2>
-            <p className="mt-5 leading-8 text-bark/80">
-              MLM Dressage was founded on a simple belief: that the most beautiful, reliable
-              dressage comes from horses who genuinely enjoy their work. After years
-              competing and developing horses through the levels, our head trainer built a
-              program around what actually works — patience, clarity, and putting the horse
-              first.
-            </p>
-            <p className="mt-4 leading-8 text-bark/80">
-              Today we coach adult amateurs, ambitious competitors, and young horses alike,
-              from quiet first rides through the FEI levels. The throughline is always the
-              same: correct basics, ridden with feel.
-            </p>
-            <dl className="mt-8 grid grid-cols-2 gap-6">
-              <div>
-                <dt className="font-serif text-3xl font-semibold text-gold">15+</dt>
-                <dd className="text-sm text-bark/70">years developing horses &amp; riders</dd>
-              </div>
-              <div>
-                <dt className="font-serif text-3xl font-semibold text-gold">FEI</dt>
-                <dd className="text-sm text-bark/70">experience through the levels</dd>
-              </div>
-            </dl>
+            <h2 className="font-serif text-3xl font-semibold text-forest">
+              A lifelong love of horses
+            </h2>
+            <div className="mt-5 space-y-4 leading-8 text-bark/80">
+              <p>
+                McKenzie&rsquo;s journey with horses began in the Western world before she
+                found her passion for dressage. Her love of horses came from her amazing and
+                supportive parents, who have made all of this possible — and she counts
+                herself beyond blessed to have had some incredible horses alongside her every
+                step of the way.
+              </p>
+              <p>
+                Today, McKenzie teaches clients and horses of all levels, from young horses
+                taking their first steps under saddle to seasoned partners competing at Grand
+                Prix. Her approach is patient, personal, and built on developing genuine
+                confidence in both horse and rider.
+              </p>
+            </div>
           </div>
         </div>
       </Section>
 
+      {/* Achievements with photo 4 */}
       <Section className="bg-sand/40">
-        <SectionHeading eyebrow="What we stand for" title="Our philosophy" />
-        <div className="grid gap-8 sm:grid-cols-3">
-          {values.map((v) => (
-            <div key={v.title} className="rounded-2xl border border-sand bg-white/70 p-7">
-              <h3 className="font-serif text-2xl font-semibold text-bark">{v.title}</h3>
-              <p className="mt-3 leading-7 text-bark/80">{v.body}</p>
+        <div className="grid items-center gap-12 lg:grid-cols-2">
+          <div className="order-2 lg:order-1">
+            <p className="mb-3 text-sm font-medium uppercase tracking-[0.3em] text-gold">
+              Competition record
+            </p>
+            <h2 className="font-serif text-3xl font-semibold text-forest">
+              Proven through the Grand Prix
+            </h2>
+            <div className="mt-5 space-y-4 leading-8 text-bark/80">
+              <p>
+                A USDF Bronze, Silver, and Gold medalist, McKenzie has earned scores of up to
+                69% in the Grand Prix aboard a horse she trained herself. She has contested
+                the U25 Grand Prix CDIs and numerous regional championships across several
+                different horses, and has competed at the U.S. Dressage Festival of Champions.
+              </p>
+              <p>
+                She has ridden at Festival of Champions twice, and most recently coached her
+                young rider there to a reserve championship with a score of 76% in the FEI
+                Children&rsquo;s division — a result she&rsquo;s especially proud of.
+              </p>
             </div>
-          ))}
+          </div>
+          <div className="relative order-1 aspect-[4/3] overflow-hidden rounded-2xl shadow-sm lg:order-2">
+            <Image
+              src="/photos/photo4.jpg"
+              alt="McKenzie Milburn competing at the U.S. Dressage Festival of Champions"
+              fill
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              className="object-cover"
+            />
+          </div>
         </div>
       </Section>
 
-      <CtaBand heading="Come see it for yourself." sub="Book a free session and experience the MLM Dressage approach first-hand." />
+      {/* Sale horses */}
+      <Section className="bg-cream">
+        <div className="mx-auto max-w-3xl text-center">
+          <p className="mb-3 text-sm font-medium uppercase tracking-[0.3em] text-gold">
+            Finding the perfect match
+          </p>
+          <h2 className="font-serif text-3xl font-semibold text-forest">
+            A passion for placing sale horses
+          </h2>
+          <p className="mt-5 leading-8 text-bark/80">
+            McKenzie has a real passion for finding sale horses the perfect home. Having
+            worked at several large sale barns as a rider, she has helped facilitate the sale
+            of many horses — and brings that experience and care to every match she makes.
+          </p>
+        </div>
+      </Section>
+
+      <CtaBand
+        heading="Come ride with McKenzie."
+        sub={`Book a free session at ${site.venue.name} and experience the MLM Dressage approach first-hand.`}
+      />
     </>
   );
 }

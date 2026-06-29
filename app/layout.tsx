@@ -21,11 +21,11 @@ export const metadata: Metadata = {
     template: "%s · MLM Dressage",
   },
   description:
-    "Classical dressage training, rider coaching, and sport horse sales in Greenvale. Book your free 45-minute breakthrough session today.",
+    "Dressage training, rider coaching, and sport horse sales with McKenzie Milburn in Encinitas, California. Book your free 45-minute session today.",
   openGraph: {
     title: "MLM Dressage — Training, Coaching & Sport Horse Sales",
     description:
-      "Classical dressage training, rider coaching, and sport horse sales. Book your free breakthrough session.",
+      "Dressage training, rider coaching, and sport horse sales with McKenzie Milburn. Book your free session.",
     siteName: "MLM Dressage",
     type: "website",
   },
