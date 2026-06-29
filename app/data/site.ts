@@ -22,7 +22,7 @@ export const site = {
   social: {
     instagram: "https://www.instagram.com/MLM_Dressage",
     instagramHandle: "MLM_Dressage",
-    facebook: "https://www.facebook.com/",
+    facebook: "https://www.facebook.com/mckenzie.milburn.9/",
     facebookHandle: "McKenzie Milburn",
   },
   logo: "/photos/clear-logo.png",
