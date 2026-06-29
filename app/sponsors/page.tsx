@@ -34,7 +34,16 @@ export default function SponsorsPage() {
               key={sponsor.name}
               className="flex h-full flex-col rounded-2xl border border-sand bg-white p-8 text-center shadow-sm"
             >
-              <h3 className="font-serif text-2xl font-semibold text-gold">{sponsor.name}</h3>
+              <h3 className="font-serif text-2xl font-semibold text-gold">
+                <a
+                  href={sponsor.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline-offset-4 transition-colors hover:text-forest hover:underline"
+                >
+                  {sponsor.name}
+                </a>
+              </h3>
               <p className="mt-4 leading-7 text-bark/80">{sponsor.blurb}</p>
             </article>
           ))}

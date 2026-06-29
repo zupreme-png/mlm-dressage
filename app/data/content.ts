@@ -58,19 +58,23 @@ export const services: Service[] = [
 export type Sponsor = {
   name: string;
   blurb: string;
+  url: string;
 };
 
 export const sponsors: Sponsor[] = [
   {
     name: "Aviar Saddles",
     blurb: "Beautifully crafted saddles built for fit, comfort, and performance.",
+    url: "https://www.aviarsaddles.com/",
   },
   {
     name: "Horspa",
     blurb: "Thoughtful equine care and recovery to keep horses feeling their best.",
+    url: "https://www.horspa.com",
   },
   {
     name: "EQGraze",
     blurb: "Smart, healthy grazing solutions for happier, well-managed horses.",
+    url: "https://eqgraze.com",
   },
 ];
