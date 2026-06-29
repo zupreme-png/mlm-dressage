@@ -26,13 +26,13 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Intro with photo 3 */}
+      {/* Intro with photo 2 */}
       <Section className="bg-cream">
         <div className="grid items-center gap-12 lg:grid-cols-2">
           <div className="relative aspect-[4/5] overflow-hidden rounded-2xl shadow-sm">
             <Image
-              src="/photos/photo3.jpg"
-              alt="McKenzie Milburn with her dressage horse at a competition"
+              src="/photos/photo2.jpg"
+              alt="McKenzie Milburn with her dressage horse at the barn"
               fill
               sizes="(max-width: 1024px) 100vw, 50vw"
               className="object-cover"
@@ -61,7 +61,7 @@ export default function AboutPage() {
         </div>
       </Section>
 
-      {/* Achievements with photo 4 */}
+      {/* Achievements with photo 5 */}
       <Section className="bg-sand/40">
         <div className="grid items-center gap-12 lg:grid-cols-2">
           <div className="order-2 lg:order-1">
@@ -87,8 +87,8 @@ export default function AboutPage() {
           </div>
           <div className="relative order-1 aspect-[4/3] overflow-hidden rounded-2xl shadow-sm lg:order-2">
             <Image
-              src="/photos/photo4.jpg"
-              alt="McKenzie Milburn competing at the U.S. Dressage Festival of Champions"
+              src="/photos/photo5.jpg"
+              alt="McKenzie Milburn competing at a dressage show"
               fill
               sizes="(max-width: 1024px) 100vw, 50vw"
               className="object-cover"
@@ -97,20 +97,32 @@ export default function AboutPage() {
         </div>
       </Section>
 
-      {/* Sale horses */}
+      {/* Sale horses with photo 3 */}
       <Section className="bg-cream">
-        <div className="mx-auto max-w-3xl text-center">
-          <p className="mb-3 text-sm font-medium uppercase tracking-[0.3em] text-gold">
-            Finding the perfect match
-          </p>
-          <h2 className="font-serif text-3xl font-semibold text-forest">
-            A passion for placing sale horses
-          </h2>
-          <p className="mt-5 leading-8 text-bark/80">
-            McKenzie has a real passion for finding sale horses the perfect home. Having
-            worked at several large sale barns as a rider, she has helped facilitate the sale
-            of many horses — and brings that experience and care to every match she makes.
-          </p>
+        <div className="grid items-center gap-12 lg:grid-cols-2">
+          <div>
+            <p className="mb-3 text-sm font-medium uppercase tracking-[0.3em] text-gold">
+              Finding the perfect match
+            </p>
+            <h2 className="font-serif text-3xl font-semibold text-forest">
+              A passion for placing sale horses
+            </h2>
+            <p className="mt-5 leading-8 text-bark/80">
+              McKenzie has a real passion for finding sale horses the perfect home. Having
+              worked at several large sale barns as a rider, she has helped facilitate the
+              sale of many horses — and brings that experience and care to every match she
+              makes.
+            </p>
+          </div>
+          <div className="relative aspect-[4/5] overflow-hidden rounded-2xl shadow-sm">
+            <Image
+              src="/photos/photo3.jpg"
+              alt="McKenzie Milburn with her dressage horse at a competition"
+              fill
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              className="object-cover"
+            />
+          </div>
         </div>
       </Section>
 
