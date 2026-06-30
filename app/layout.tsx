@@ -20,11 +20,11 @@ const cormorant = Cormorant_Garamond({
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: "MLM Dressage — Training, Coaching & Sport Horse Sales",
+    default: "MLM Dressage — Dressage Training in Encinitas & San Diego, CA",
     template: "%s · MLM Dressage",
   },
   description:
-    "Dressage training, rider coaching, and sport horse sales with McKenzie Milburn in Encinitas, California. Book your free 45-minute session today.",
+    "Dressage training, lessons, and sport horse sales with McKenzie Milburn in Encinitas — serving dressage riders across San Diego County. Book a free trial lesson today.",
   alternates: {
     canonical: "/",
   },

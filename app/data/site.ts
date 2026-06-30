@@ -2,7 +2,7 @@
 
 export const site = {
   name: "MLM Dressage",
-  tagline: "Dressage training, coaching & sport horse sales",
+  tagline: "Dressage training, coaching & sport horse sales in Encinitas & San Diego County",
   rider: "McKenzie Milburn",
   url: "https://mlmdressage.com",
   // Contact

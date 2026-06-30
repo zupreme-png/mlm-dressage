@@ -63,10 +63,11 @@ export default function Home() {
               Real progress, built on trust — not cookie-cutter lessons.
             </h2>
             <p className="mt-5 leading-8 text-bark/80">
-              You get a program tailored to you and your horse, honest and encouraging
-              feedback, and a trainer who genuinely cares about your partnership. Whether
-              you&rsquo;re starting a young horse or chasing your next score, the foundation
-              is the same: correct, confident riding.
+              Based at Wildflower Equestrian Center in Encinitas, McKenzie works with
+              dressage riders throughout San Diego County. You get a program tailored to you
+              and your horse, honest and encouraging feedback, and a trainer who genuinely
+              cares about your partnership. Whether you&rsquo;re starting a young horse or
+              chasing your next score, the foundation is the same: correct, confident riding.
             </p>
             <div className="mt-8">
               <LinkButton href="/about" variant="ghost">
