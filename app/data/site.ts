@@ -4,7 +4,7 @@ export const site = {
   name: "MLM Dressage",
   tagline: "Dressage training, coaching & sport horse sales",
   rider: "McKenzie Milburn",
-  url: "https://mlm-dressage.vercel.app",
+  url: "https://mlmdressage.com",
   // Contact
   phone: "425-422-0796",
   phoneHref: "tel:+14254220796",
